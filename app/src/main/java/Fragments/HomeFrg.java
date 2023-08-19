@@ -5,27 +5,37 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import org.soheil.walletgenerator.App;
 import org.soheil.walletgenerator.R;
 import org.soheil.walletgenerator.databinding.FrgHomeBinding;
-import org.soheil.walletgenerator.databinding.FrgSplashBinding;
 
+import javax.inject.Inject;
+
+import Adapter.WordsAdapter;
 import Custom.Toolbar;
 import Listeners.OnFrgDestroy;
+import Models.AddressModel;
+import Models.SignMsgModel;
 import Navigator.HomeNavigator;
-import Navigator.SplashNavigator;
 import ViewModel.HomeViewModel;
-import ViewModel.SplashViewModel;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 import base.BaseFragment;
 import dagger.hilt.android.AndroidEntryPoint;
+import utils.Utils;
 
 
 @AndroidEntryPoint
 public class HomeFrg extends BaseFragment<FrgHomeBinding, HomeViewModel> implements HomeNavigator {
 
     private static final String TAG = "HomeFrg";
+
+    @Inject
+    public Utils utils;
+
+    @Inject
+    public WordsAdapter wordsAdapter;
+
 
     public static HomeFrg newInstance() {
         Bundle args = new Bundle();
@@ -76,9 +86,48 @@ public class HomeFrg extends BaseFragment<FrgHomeBinding, HomeViewModel> impleme
 
     @Override
     public void onCreatedView(@Nullable Bundle savedInstanceState) {
-
+        observeGenerationAddress();
+        observeSignMessage();
     }
 
+
+    private void observeGenerationAddress () {
+
+        viewDataBinding.containerGeneratedHomeState.recyclerMnemonicGeneratedHomeState
+                .setAdapter(wordsAdapter);
+
+        viewModel.getGeneratedAddress().observe(this, new Observer<AddressModel>() {
+            @Override
+            public void onChanged(AddressModel addressModel) {
+                if(addressModel == null)
+                    return;
+
+                wordsAdapter.submitList(addressModel.getMnemonic());
+
+                viewDataBinding.containerGeneratedHomeState.txtAddressGeneratedHomeState
+                        .setText(addressModel.getAddress());
+
+                viewDataBinding.containerGeneratedHomeState.txtPrivateKeyGeneratedHomeState
+                        .setText(addressModel.getPrivateKey());
+            }
+        });
+    }
+
+
+    private void observeSignMessage () {
+
+        viewModel.getSignMessage().observe(this, new Observer<SignMsgModel>() {
+            @Override
+            public void onChanged(SignMsgModel signMsgModel) {
+                if(signMsgModel == null)
+                    return;
+
+                viewDataBinding.containerGeneratedHomeState.txtAddressGeneratedHomeState
+                        .setText(addressModel.getAddress());
+
+            }
+        });
+    }
 
     @Override
     public void onDestroy() {
@@ -107,4 +156,8 @@ public class HomeFrg extends BaseFragment<FrgHomeBinding, HomeViewModel> impleme
     }
 
 
+    @Override
+    public void showToastMsg(String msg) {
+        utils.showSuccessToast(msg);
+    }
 }

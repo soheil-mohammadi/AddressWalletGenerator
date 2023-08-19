@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomRoundedButton">
+        <attr format="color" name="buttonColor"/>
+        <attr format="color" name="buttonGradientStartColor"/>
+        <attr format="color" name="buttonGradientEndColor"/>
+        <attr format="dimension" name="buttonCornerRadius"/>
+        <attr format="color" name="buttonRippleColor"/>
+        <attr format="integer" name="buttonRippleAlpha"/>
+        <attr name="isBoldRoundBtn" format="boolean" />
+        <attr name="isMediumRoundBtn" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomTextView">
+        <attr name="isBold" format="boolean" />
+        <attr name="isMedium" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

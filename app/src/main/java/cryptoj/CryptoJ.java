@@ -4,7 +4,6 @@ import com.google.common.base.Splitter;
 import cryptoj.classes.TXReceiver;
 import cryptoj.classes.UTXObject;
 import cryptoj.demos.Demo_2_SignAndVerifyMessage;
-import cryptoj.demos.Demo_3_EncryptAndDecryptMessage;
 import cryptoj.enums.AddressType;
 import cryptoj.enums.Coin;
 import cryptoj.enums.CoinType;
@@ -90,7 +89,7 @@ public class CryptoJ {
      * @return mnemonic phrase made of words
      * @throws CryptoJException if method params are invalid or internal validation of generated result fails
      */
-    public static String generateMnemonic(
+    public static ArrayList<String> generateMnemonic(
             @NonNull Integer length
     ) throws CryptoJException {
         return generateMnemonic(length, null);
@@ -104,7 +103,7 @@ public class CryptoJ {
      * @return mnemonic phrase made of words
      * @throws CryptoJException if method params are invalid or internal validation of generated result fails
      */
-    public static String generateMnemonic(
+    public static ArrayList<String> generateMnemonic(
             @NonNull Integer length,
             String passphrase
     ) throws CryptoJException {
@@ -124,7 +123,7 @@ public class CryptoJ {
         DeterministicSeed seed = new DeterministicSeed(new SecureRandom(), entropyLen, passphrase);
 
         // Get mnemonic from seed
-        List<String> words = seed.getMnemonicCode();
+        ArrayList<String> words = (ArrayList<String>) seed.getMnemonicCode();
 
         // Concat word list
         String mnemonic = String.join(" ", words);
@@ -134,7 +133,8 @@ public class CryptoJ {
             throw new CryptoJException("Internal validation (mnemonic) has failed.");
         }
 
-        return mnemonic;
+        // return mnemonic;
+        return words;
     }
 
     /**
@@ -184,6 +184,24 @@ public class CryptoJ {
                 network,
                 addrType,
                 mnemonic,
+                null
+        );
+    }
+
+
+    /**
+     * Generate xPub Custom Method By Using List Of Words (extended public key).<br>
+     */
+    public static String generateXPub(
+            @NonNull Network network,
+            @NonNull AddressType addrType,
+            @NonNull ArrayList<String> mnemonic
+    ) throws CryptoJException {
+        return generateXPub(
+                network,
+                addrType,
+                // Concat word list
+                String.join(" ", mnemonic),
                 null
         );
     }
@@ -438,6 +456,28 @@ public class CryptoJ {
                 network,
                 addrType,
                 mnemonic,
+                null,
+                derivationIndex
+        );
+    }
+
+
+    /**
+     * Generate private key Custom Method By Using List Of Words for an address.
+     *
+     */
+
+    public static String generatePrivateKey(
+            @NonNull Network network,
+            @NonNull AddressType addrType,
+            @NonNull ArrayList<String> mnemonic,
+            @NonNull Integer derivationIndex
+    ) throws CryptoJException {
+        return generatePrivateKey(
+                network,
+                addrType,
+                // Concat word list
+                String.join(" ", mnemonic),
                 null,
                 derivationIndex
         );

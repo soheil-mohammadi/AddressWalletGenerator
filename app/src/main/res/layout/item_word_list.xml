@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Custom.CustomTextView
+            android:id="@+id/txtWordItemList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="soheil"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/margin_very_small"
+            android:background="@drawable/back_corner_gray"
+            android:padding="@dimen/padding_small"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+</layout>

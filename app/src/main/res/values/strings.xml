@@ -2,5 +2,13 @@
     <string name="app_name">WalletGenerator</string>
     <string name="not_found_act_for_handle">No program was found to manage this section!</string>
     <string name="version_info">App Version : %s</string>
+    <string name="txt_start_using_generator">Generate an address wallet</string>
+    <string name="mnemonic_label">Mnemonic:</string>
+    <string name="address_label">Address:</string>
+    <string name="private_key_label">Private Key:</string>
+    <string name="txt_regenerate">Re-Generate</string>
+    <string name="txt_sign_msg">Sign a message</string>
+    <string name="address_copied_to_clipboard">Address copied to clipboard</string>
+    <string name="private_key_copied_to_clipboard">Private key copied to clipboard</string>
 
 </resources>
