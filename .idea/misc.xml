@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/done_check_white.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/back_bottom_corner_gray.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/back_corner_accent.xml" value="0.1355" />
+        <entry key="app/src/main/res/drawable/back_corner_gray.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/back_toolbar_action_normal.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/custom_toast_error_background.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/custom_toast_warn_background.xml" value="0.1355" />
@@ -23,6 +24,7 @@
         <entry key="app/src/main/res/layout/frg_splash.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/generated_home_state.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_word_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/signed_home_state.xml" value="0.25" />
         <entry key="app/src/main/res/layout/start_home_state.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/start_state.xml" value="0.2265625" />
       </map>

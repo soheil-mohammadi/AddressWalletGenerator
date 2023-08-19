@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ViewModel.HomeViewModel" />
+
+        <import type="org.soheil.walletgenerator.R" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_small">
+
+
+        <Custom.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/raw_message_label"
+            android:textColor="@color/black"
+            android:layout_gravity="start|center"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:padding="@dimen/padding_small"
+            android:textSize="@dimen/_13ssp" />
+
+
+        <Custom.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:layout_marginHorizontal="@dimen/margin_small"
+            android:background="@drawable/back_corner_gray"
+            tools:text="A test message can be locate here ..."
+            android:text="@{viewModel.preDefinedRawMsg}"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/margin_very_small"
+            android:textSize="@dimen/_12ssp" />
+
+
+        <Custom.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_label"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textColor="@color/black"
+            android:layout_gravity="start|center"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/margin_very_small"
+            android:padding="@dimen/padding_small"
+            android:textSize="@dimen/_13ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_small"
+            android:layout_marginHorizontal="@dimen/margin_small"
+            android:background="@drawable/back_corner_gray">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="end|center"
+                app:resSrc="@{R.drawable.ic_copy_icon}"
+                android:onClick="@{(view) -> viewModel.onCopyPrivateKeyClicked()}"
+                tools:srcCompat="@drawable/ic_copy_icon" />
+
+
+            <Custom.CustomTextView
+                android:id="@+id/txtSignatureSignedHomeState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0xytywennw445nnsnnsnsnkakkk6000xx"
+                android:textColor="@color/black"
+                android:layout_marginBottom="@dimen/margin_very_small"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+
+
+
+        <Custom.CustomRoundedButton
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:gravity="center"
+            app:isBoldRoundBtn="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:buttonGradientStartColor="#15615B"
+            app:buttonGradientEndColor="#1B766F"
+            app:buttonRippleColor="@android:color/transparent"
+            android:onClick="@{(view) ->viewModel.onRegenerateButtonClicked()}"
+            android:textSize="@dimen/_12ssp"
+            android:text="@string/txt_regenerate"
+            android:textColor="@color/white"
+            app:buttonCornerRadius="@dimen/_12sdp"
+            />
+
+
+
+    </LinearLayout>
+</layout>

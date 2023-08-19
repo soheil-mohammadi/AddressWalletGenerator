@@ -43,6 +43,15 @@
             android:visibility="@{viewModel.homeState.equals(HomeState.GENERATED) ? View.VISIBLE : View.GONE}"
             />
 
+        <include
+            android:id="@+id/containerSignedMsgHomeState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/signed_home_state"
+            app:viewModel="@{viewModel}"
+            android:visibility="@{viewModel.homeState.equals(HomeState.SIGN_MSG) ? View.VISIBLE : View.GONE}"
+            />
+
 
     </LinearLayout>
 

@@ -40,7 +40,7 @@
             android:orientation="vertical"
             app:spanCount="4"
             android:padding="@dimen/padding_very_small"
-            android:background="@drawable/back_bottom_corner_gray"
+            android:background="@drawable/back_corner_gray"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/item_word_list"/>
 
@@ -62,7 +62,7 @@
             android:orientation="vertical"
             android:padding="@dimen/padding_small"
             android:layout_marginHorizontal="@dimen/margin_small"
-            android:background="@drawable/back_bottom_corner_gray">
+            android:background="@drawable/back_corner_gray">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_20sdp"
@@ -90,6 +90,7 @@
             android:layout_height="wrap_content"
             android:text="@string/private_key_label"
             android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_small"
             android:layout_gravity="start|center"
             android:textStyle="bold"
             android:layout_marginStart="@dimen/margin_very_small"
@@ -102,7 +103,7 @@
             android:orientation="vertical"
             android:padding="@dimen/padding_small"
             android:layout_marginHorizontal="@dimen/margin_small"
-            android:background="@drawable/back_bottom_corner_gray">
+            android:background="@drawable/back_corner_gray">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/_20sdp"

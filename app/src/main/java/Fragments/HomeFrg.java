@@ -122,8 +122,8 @@ public class HomeFrg extends BaseFragment<FrgHomeBinding, HomeViewModel> impleme
                 if(signMsgModel == null)
                     return;
 
-                viewDataBinding.containerGeneratedHomeState.txtAddressGeneratedHomeState
-                        .setText(addressModel.getAddress());
+                viewDataBinding.containerSignedMsgHomeState.txtSignatureSignedHomeState
+                        .setText(signMsgModel.getSignature());
 
             }
         });
