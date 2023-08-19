@@ -6,9 +6,8 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    android:background="@android:color/transparent"
+    android:background="@color/purple_500"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin_very_small"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -62,7 +61,7 @@
                     android:textStyle="bold"
                     android:gravity="center"
                     android:textSize="@dimen/_13ssp"
-                    android:textColor="#162B40"
+                    android:textColor="@color/white"
                     />
 
                 <androidx.appcompat.widget.AppCompatImageView

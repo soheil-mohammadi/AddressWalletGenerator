@@ -29,7 +29,7 @@
 
 
         <Custom.CustomRoundedButton
-            android:layout_width="@dimen/_160sdp"
+            android:layout_width="@dimen/_200sdp"
             android:layout_height="@dimen/_45sdp"
             android:gravity="center"
             app:isBoldRoundBtn="true"

@@ -3,7 +3,6 @@ package cryptoj;
 import com.google.common.base.Splitter;
 import cryptoj.classes.TXReceiver;
 import cryptoj.classes.UTXObject;
-import cryptoj.demos.Demo_2_SignAndVerifyMessage;
 import cryptoj.enums.AddressType;
 import cryptoj.enums.Coin;
 import cryptoj.enums.CoinType;

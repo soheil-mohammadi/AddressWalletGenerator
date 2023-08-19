@@ -10,6 +10,7 @@
     <string name="txt_sign_msg">Sign a message</string>
     <string name="address_copied_to_clipboard">Address copied to clipboard</string>
     <string name="private_key_copied_to_clipboard">Private key copied to clipboard</string>
+    <string name="signature_copied_to_clipboard">Signature copied to clipboard</string>
     <string name="raw_message_label">Raw Message:</string>
     <string name="sign_label">Sign:</string>
 

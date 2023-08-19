@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="navigationColor">@color/purple_500</color>
+
     <color name="colorGreenAccent">#5daa0f</color>
 
     <color name="colorRed">#f4511e</color>

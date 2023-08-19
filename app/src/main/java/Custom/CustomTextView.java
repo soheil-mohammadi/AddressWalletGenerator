@@ -4,12 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
+import org.soheil.walletgenerator.App;
+import org.soheil.walletgenerator.R;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import enums.FontType;
-
-import org.vpn.chita.App;
-import org.vpn.chita.R;
 
 public class CustomTextView extends AppCompatTextView {
 

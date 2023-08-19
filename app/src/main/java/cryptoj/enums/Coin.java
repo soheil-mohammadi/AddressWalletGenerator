@@ -1,5 +1,7 @@
 package cryptoj.enums;
 
+import android.util.Log;
+
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
@@ -111,6 +113,8 @@ public enum Coin {
             this.smartContractAddress = null;
         }
     }
+
+    private static final String TAG = "Coin";
 
     public static Collection<Coin> values(Network network, CoinType coinType) {
         if (network == null && coinType == null) {

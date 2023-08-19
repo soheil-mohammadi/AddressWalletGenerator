@@ -118,11 +118,14 @@ public class Utils {
 
     private Handler handler;
 
+    private static GlideManager glideManager;
+
 
     @Inject
-    public Utils(@ApplicationContext Context context) {
+    public Utils(@ApplicationContext Context context , GlideManager glideManager) {
         this.handler = new Handler(Looper.getMainLooper());
         this.context = context;
+        this.glideManager = glideManager;
     }
 
 
@@ -173,6 +176,11 @@ public class Utils {
         }
     }
 
+
+    @BindingAdapter("resSrc")
+    public static void setImageResWithGlide(ImageView imageView, int resource) {
+        glideManager.loadRes(resource, imageView);
+    }
 
     @BindingAdapter("android:layout_width")
     public static void setLayoutWidth(View view, float width) {

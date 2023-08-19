@@ -27,7 +27,7 @@
             android:text="@string/raw_message_label"
             android:textColor="@color/black"
             android:layout_gravity="start|center"
-            android:textStyle="bold"
+            app:isBold="true"
             android:layout_marginStart="@dimen/margin_very_small"
             android:padding="@dimen/padding_small"
             android:textSize="@dimen/_13ssp" />
@@ -53,7 +53,7 @@
             android:layout_marginTop="@dimen/margin_normal"
             android:textColor="@color/black"
             android:layout_gravity="start|center"
-            android:textStyle="bold"
+            app:isBold="true"
             android:layout_marginStart="@dimen/margin_very_small"
             android:padding="@dimen/padding_small"
             android:textSize="@dimen/_13ssp" />
@@ -71,7 +71,7 @@
                 android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="end|center"
                 app:resSrc="@{R.drawable.ic_copy_icon}"
-                android:onClick="@{(view) -> viewModel.onCopyPrivateKeyClicked()}"
+                android:onClick="@{(view) -> viewModel.onCopySignatureClicked()}"
                 tools:srcCompat="@drawable/ic_copy_icon" />
 
 
@@ -95,7 +95,7 @@
             android:gravity="center"
             app:isBoldRoundBtn="true"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_very_big"
             app:buttonGradientStartColor="#15615B"
             app:buttonGradientEndColor="#1B766F"
             app:buttonRippleColor="@android:color/transparent"

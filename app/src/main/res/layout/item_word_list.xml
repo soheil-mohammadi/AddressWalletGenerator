@@ -20,8 +20,8 @@
             android:textColor="@color/black"
             android:layout_margin="@dimen/margin_very_small"
             android:background="@drawable/back_corner_gray_light"
-            android:padding="@dimen/padding_small"
-            android:textSize="@dimen/_12ssp" />
+            android:padding="@dimen/padding_very_small"
+            android:textSize="@dimen/_11ssp" />
 
     </LinearLayout>
 </layout>

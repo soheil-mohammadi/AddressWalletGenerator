@@ -8,6 +8,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import java.io.File;
@@ -16,6 +17,8 @@ import javax.inject.Inject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import dagger.hilt.android.HiltAndroidApp;
+import enums.FontType;
+import utils.FontManager;
 import utils.Utils;
 
 /**
@@ -34,10 +37,11 @@ public class App extends Application {
 
     private static AppCompatActivity currentActivity ;
 
-
     @Inject
     public Utils utils;
 
+    @Inject
+    public FontManager fontManager;
 
     @Override
     public void onCreate() {
@@ -167,5 +171,9 @@ public class App extends Application {
         return utils;
     }
 
+
+    public Typeface getAppFont(FontType fontType) {
+        return fontManager.getAppFont(fontType);
+    }
 
 }

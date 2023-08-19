@@ -61,6 +61,11 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
         getNavigator().showToastMsg(App.getInstance().getResString(R.string.private_key_copied_to_clipboard));
     }
 
+    public void onCopySignatureClicked () {
+        utils.copyToClipboard(signMessage.getValue().getSignature());
+        getNavigator().showToastMsg(App.getInstance().getResString(R.string.signature_copied_to_clipboard));
+    }
+
     public void onRegenerateButtonClicked () {
         onGenerateButtonOfStart();
     }
@@ -68,46 +73,60 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
 
     public void onSignMessageClicked () {
 
-        Network network = Network.ETHEREUM_MAINNET;
+        homeState.setValue(HomeState.SIGN_MSG);
 
-        try {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-            homeState.setValue(HomeState.SIGN_MSG);
+                    Network network = Network.ETHEREUM_MAINNET;
+                    String signature = CryptoJ.signMessage(
+                            network,
+                            preDefinedRawMsg.getValue(),
+                            generatedAddress.getValue().getPrivateKey()
+                    );
 
-            String signature = CryptoJ.signMessage(
-                    network,
-                    preDefinedRawMsg.getValue(),
-                    generatedAddress.getValue().getPrivateKey()
-            );
+                    signMessage.postValue(new SignMsgModel(preDefinedRawMsg.getValue() , signature));
 
-            signMessage.setValue(new SignMsgModel(preDefinedRawMsg.getValue() , signature));
-        } catch (CryptoJException e) {
-            e.printStackTrace();
-        }
+                } catch (CryptoJException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
 
     }
 
 
     public void onGenerateButtonOfStart () {
-        try {
-            homeState.setValue(HomeState.GENERATED);
 
-            Network network = Network.ETHEREUM_MAINNET;
-            AddressType addressType = AddressType.P2WPKH_NATIVE_SEGWIT;
+        homeState.setValue(HomeState.GENERATED);
 
-            ArrayList<String> mnemonic = CryptoJ.generateMnemonic(12);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-            String xPub = CryptoJ.generateXPub(network, addressType, mnemonic);
+                    Network network = Network.ETHEREUM_MAINNET;
+                    AddressType addressType = AddressType.P2WPKH_NATIVE_SEGWIT;
 
-            String address = CryptoJ.generateAddress(network, addressType, xPub, 0);
-            String privateKey = CryptoJ.generatePrivateKey(network, addressType, mnemonic, 0);
+                    ArrayList<String> mnemonic = CryptoJ.generateMnemonic(12);
 
-            generatedAddress.setValue(new AddressModel(mnemonic , address , privateKey));
+                    String xPub = CryptoJ.generateXPub(network, addressType, mnemonic);
 
+                    String address = CryptoJ.generateAddress(network, addressType, xPub, 0);
+                    String privateKey = CryptoJ.generatePrivateKey(network, addressType, mnemonic, 0);
 
-        } catch (CryptoJException e) {
-            e.printStackTrace();
-        }
+                    generatedAddress.postValue(new AddressModel(mnemonic , address , privateKey));
+
+                } catch (CryptoJException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
 
     }
 
