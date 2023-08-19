@@ -1,0 +1,17 @@
+<resources>
+
+    <dimen name="margin_very_small">@dimen/_5sdp</dimen>
+    <dimen name="margin_small">@dimen/_10sdp</dimen>
+    <dimen name="margin_normal">@dimen/_15sdp</dimen>
+    <dimen name="margin_big">@dimen/_20sdp</dimen>
+    <dimen name="margin_very_big">@dimen/_25sdp</dimen>
+    <dimen name="margin_extra_very_big">@dimen/_30sdp</dimen>
+
+
+    <dimen name="padding_ext_very_small">@dimen/_2sdp</dimen>
+    <dimen name="padding_very_small">@dimen/_5sdp</dimen>
+    <dimen name="padding_small">@dimen/_10sdp</dimen>
+    <dimen name="padding_normal">@dimen/_15sdp</dimen>
+    <dimen name="padding_big">@dimen/_20sdp</dimen>
+
+</resources>

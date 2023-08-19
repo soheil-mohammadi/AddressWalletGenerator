@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorGreenAccent">#5daa0f</color>
+
+    <color name="colorRed">#f4511e</color>
+    <color name="colorCustomBlack">#162B40</color>
+
+
+    <color name="colorYellow">#ffca28</color>
+
+    <color name="colorGrayMoreLight">#D0D0D3</color>
+    <color name="colorGrayLight">#ECEAE5</color>
+    <color name="colorGray">#9C9A96</color>
+    <color name="colorGrayTransFifty">#809C9A96</color>
+    <color name="colorGrayMidDark">#7D7A74</color>
+    <color name="colorGrayDark">#565762</color>
+    <color name="colorGrayDarker">#32312F</color>
+
+    <color name="success_text">#99CC00</color>
+    <color name="error_text">#D9192C</color>
+    <color name="warning_text">#FF9909</color>
+
+
+    <item name="lighttext" type="color">#999</item>
+    <color name="colorGrayToWhite">#F4F4F4</color>
+
+    <color name="colorPurple">#4e4681</color>
+    <color name="colorPurpleLight">#E4484175</color>
+
+    <color name="colorSoLight">#FFFFFF</color>
+    <color name="colorRedPure">#FF0000</color>
+    <color name="colorCustomBlue">#00CCFF</color>
+    <color name="colorWarning">#FFB36B</color>
+    <color name="colorWarningDark">#C88017</color>
+    <color name="colorGreenLight">#43B143</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorGreenCircularPrg">#46ac79</color>
+    <color name="colorNavigationBarColor">#47e9ea</color>
+    <color name="colorUploadGP">#51C8BF</color>
+    <color name="colorDownloadGP">#FFB36B</color>
+    <color name="colorGuidelineGP">#3D6C68</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="colorErrorRedTrans">#0DE74562</color>
+
+
+</resources>
