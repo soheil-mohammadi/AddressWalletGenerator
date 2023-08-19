@@ -2,6 +2,8 @@ package ViewModel;
 
 
 import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 
 import org.soheil.walletgenerator.App;
 import org.soheil.walletgenerator.R;
@@ -33,7 +35,8 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
 
         START ,
         GENERATED ,
-        SIGN_MSG
+        SIGN_MSG ,
+        ON_PROGRESS
 
     }
 
@@ -101,7 +104,7 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
 
     public void onGenerateButtonOfStart () {
 
-        homeState.setValue(HomeState.GENERATED);
+        setOnProgressState();
 
         new Thread(new Runnable() {
             @Override
@@ -119,6 +122,12 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
                     String privateKey = CryptoJ.generatePrivateKey(network, addressType, mnemonic, 0);
 
                     generatedAddress.postValue(new AddressModel(mnemonic , address , privateKey));
+                    new Handler(Looper.getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            homeState.setValue(HomeState.GENERATED);
+                        }
+                    });
 
                 } catch (CryptoJException e) {
                     e.printStackTrace();
@@ -128,6 +137,10 @@ public class HomeViewModel extends BaseViewModel<HomeNavigator>  {
         }).start();
 
 
+    }
+
+    private void setOnProgressState () {
+        homeState.setValue(HomeState.ON_PROGRESS);
     }
 
 

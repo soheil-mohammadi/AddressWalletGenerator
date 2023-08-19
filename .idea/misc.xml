@@ -24,9 +24,11 @@
         <entry key="app/src/main/res/layout/frg_splash.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/generated_home_state.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_word_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/progress_home_state.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/signed_home_state.xml" value="0.25" />
         <entry key="app/src/main/res/layout/start_home_state.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/start_state.xml" value="0.2265625" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1525" />
       </map>
     </option>
   </component>

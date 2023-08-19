@@ -13,5 +13,6 @@
     <string name="signature_copied_to_clipboard">Signature copied to clipboard</string>
     <string name="raw_message_label">Raw Message:</string>
     <string name="sign_label">Sign:</string>
+    <string name="on_progress_desc">It takes some seconds ....</string>
 
 </resources>
