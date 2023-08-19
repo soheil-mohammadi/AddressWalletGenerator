@@ -17,7 +17,7 @@ Powered By __CyptoJ Repository __ (https://github.com/CryptoDarkhorse/CryptoJ) B
 
 <img src="https://github.com/soheil-mohammadi/AddressWalletGenerator/blob/main/IMAGE%202023-08-19%2017:42:34.jpg" alt="Eth Wallet Generator Screenshot" />
 
-<img src="https://github.com/soheil-mohammadi/AddressWalletGenerator/blob/main/IMAGE%202023-08-19%2017:42:35.jpg" alt="Eth Wallet Generator Screenshot"  align="right" />
+<img src="https://github.com/soheil-mohammadi/AddressWalletGenerator/blob/main/IMAGE%202023-08-19%2017:42:35.jpg" alt="Eth Wallet Generator Screenshot"  />
 
 
 ## Contribution and Issues
